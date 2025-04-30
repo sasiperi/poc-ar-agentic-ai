@@ -1,0 +1,34 @@
+accountTypes:
+  standard:
+    approvedAccounts: ["A123", "B456"]
+    rules:
+      - id: amount_limit
+        condition: "amount > 10000"
+        reason: "Amount exceeds $10000"
+        priority: 1
+      - id: date_age
+        condition: "daysSinceDate > 30"
+        reason: "Date too old"
+        priority: 2
+      - id: valid_items
+        condition: "invalidItems"
+        reason: "Invalid items"
+        priority: 3
+        validItems: ["Loan Payment", "Mortgage", "Credit Card Payment"]
+  vip:
+    approvedAccounts: ["V789"]
+    rules:
+      - id: amount_limit
+        condition: "amount > 50000"
+        reason: "Amount exceeds $50000"
+        priority: 1
+      - id: date_age
+        condition: "daysSinceDate > 60"
+        reason: "Date too old (VIP)"
+        priority: 2
+      - id: valid_items
+        condition: "invalidItems"
+        reason: "Invalid items"
+        priority: 3
+
+        validItems: ["Loan Payment", "Investment", "Private Jet"]

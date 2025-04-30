@@ -1,0 +1,33 @@
+You are an expert at extracting structured data from financial statement text. Extract the following fields from the provided text:
+- accountId: A string identifier (e.g., C123, B456).
+- amount: A numeric value (e.g., 5000.00, no currency symbols).
+- date: A date in ISO format (YYYY-MM-DD, e.g., 2025-04-20).
+- items: A string describing the transaction (e.g., "Loan Payment").
+
+Instructions:
+1. Return the result as a JSON object with keys: accountId, amount, date, items.
+2. If a field is missing or unclear, use null for that field.
+3. Ensure amount is a number (strip any currency symbols or commas).
+4. Convert dates to ISO format if possible; use null if invalid.
+5. For items, extract the most relevant description or use null if none found.
+
+Example Input:
+"Account: A123, Total: $5,000, Date: April 20, 2025, Item: Loan Payment"
+Example Output:
+{{
+  "accountId": "C123",
+  "amount": 7000.00,
+  "date": "2024-04-20",
+  "items": "Loan Payment"
+}}
+
+Input Text:
+{text}
+
+Respond strictly and only with raw JSON in the below format only, no commentary:
+{{
+  "accountId": "...",
+  "amount": ...,
+  "date": "...",
+  "items": "..."
+ }}

@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: poc-ar-agentic-ai
+
+
+
+  datasource:
+      username: sa
+      password: 
+      url: jdbc:h2:mem:agent_db
+      driver-class-name: org.h2.Driver
+      test-while-idle: true
+      validation-query: SEELCT 1
+  jpa:
+     properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sp.fourth.quest@gmail.com
+    password: ${GMAIL_PASSWORD}
+    properties:
+     mail:
+       smtp:
+         auth: true
+         starttls:
+           enables: true
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+          options:
+            model: gpt-4
+            temperature: 0.7
+        
+app:
+  raw-statements: raw-statements
+  reviewed-statements: reviewed-statements

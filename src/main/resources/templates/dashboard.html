@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statement Review Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-4">
+    <h1 class="text-2xl">Statement Review Logs</h1>
+    <table class="w-full border">
+        <tr><th>ID</th><th>Status</th><th>Details</th></tr>
+        <tr th:each="log : ${logs}">
+            <td th:text="${log.statementId}"></td>
+            <td th:text="${log.status}"></td>
+            <td th:text="${log.reason}"></td>
+        </tr>
+    </table>
+</body>
+</html>

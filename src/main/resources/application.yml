@@ -22,16 +22,17 @@ spring:
       path: /h2-console
 
   mail:
-    host: smtp.gmail.com
+    host: smtp.sendgrid.net
     port: 587
-    username: sp.fourth.quest@gmail.com
-    password: ${GMAIL_PASSWORD}
+    username: apikey
+#sp.fourth.quest@gmail.com
+    password: ${SEND_GRID_API_KEY}
     properties:
      mail:
        smtp:
-         auth: true
          starttls:
-           enables: true
+           enable: true
+       auth: true 	 
   ai:
     openai:
       api-key: ${OPENAI_API_KEY}

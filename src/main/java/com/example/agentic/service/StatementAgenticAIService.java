@@ -34,7 +34,7 @@ public class StatementAgenticAIService {
 		ValidationResult result = stmtReviewAgent.validateStatement(readStatement);
 		
 		//Agent - 03:  Managing communications. Sending mails for manual review, for fails
-		if("Fail".equals(result.getStatus()))
+		if("Failed".equals(result.getStatus()))
 			commsAgent.sendReviewEmail(result);
 	}
 	
